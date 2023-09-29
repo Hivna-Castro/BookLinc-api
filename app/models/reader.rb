@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class Reader < ApplicationRecord
-    has_one :subscription
-    has_one :newsletter, through: :subscription
+  has_many :subscriptions
+  has_many :newsletter, through: :subscription
 end

@@ -30,7 +30,6 @@ class AuthorsController < ApplicationController
 
         # author = Author.find_by(id: params[:id])
         # render(json: author.destroy.as_json)
-
     end
 
     private
