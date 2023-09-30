@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Readers
+module Subscriptions
   module Interactors
     class Subscribe
       include Interactor

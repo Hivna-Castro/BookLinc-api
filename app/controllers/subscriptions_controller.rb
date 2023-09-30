@@ -28,16 +28,24 @@ class SubscriptionsController < ApplicationController
       def subscribe_to_newsletter
         # reader = Subscription.find_by(id: params[:reader_id])
         # newsletter = Newsletter.find_by(id: params[:newsletter_id])
-    
         # result = Subscriptions::Organizers::Create.call(reader:, newsletter:)
 
         result = Subscriptions::Organizers::Create.call(reader_id: params[:reader_id], newsletter_id: params[:newsletter_id])
 
-    
         if result.success?
           render(json: result.subscription.as_json, status: :ok)
         else
           render(json: { message: result.message }, status: :unprocessable_entity)
+        end
+      end
+
+      def unsubscribe_to_newsletter
+        result = Subscriptions::Organizers::Delete.call(reader_id: params[:reader_id], newsletter_id: params[:newsletter_id])
+    
+        if result.success?
+          render (json: result.subscription.as_json, status: :ok)
+        else
+          render (json: { message: result.message }, status: :unprocessable_entity)
         end
       end
     

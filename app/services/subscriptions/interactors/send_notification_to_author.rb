@@ -1,4 +1,4 @@
-class Subscriptions::Interactors::send_notification_to_author
+class Subscriptions::Interactors::SendNotificationToAuthor
     include Interactor
 
     def call

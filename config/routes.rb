@@ -21,15 +21,15 @@ Rails.application.routes.draw do
 
   get 'newsletters', to: 'newsletters#all'
   get 'newsletter/:id', to: 'newsletters#find'
-  post 'newsletter/', to: 'newsletters#create'
+  post 'newsletter', to: 'newsletters#create'
   put 'newsletter/:id', to: 'newsletters#update'
   delete 'newsletter/:id', to: 'newsletters#delete'
 
   get 'subscriptions', to: 'subscriptions#all'
   get 'subscription/:id', to: 'subscriptions#find'
-  post 'subscription/', to: 'subscriptions#create'
+  post 'subscription', to: 'subscriptions#create'
   put 'subscription/:id', to: 'subscriptions#update'
   delete 'subscription/:id', to: 'subscriptions#delete'
-  post 'subscriptions', to: 'subscriptions#subscription_to_newsletter'
+  post 'subscriptions', to: 'subscriptions#subscribe_to_newsletter'
+  delete "subscription/:id", to: 'subscriptions#unsubscribe_to_newsletter'
 end
-

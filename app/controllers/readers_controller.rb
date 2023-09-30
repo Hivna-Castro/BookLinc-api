@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReadersController < ApplicationController
   def all
     readers = Reader.all
