@@ -32,4 +32,4 @@ Rails.application.routes.draw do
   delete 'subscription/:id', to: 'subscriptions#delete'
   post 'subscriptions', to: 'subscriptions#subscribe_to_newsletter'
   delete "subscription/:id", to: 'subscriptions#unsubscribe_to_newsletter'
-end
+end 

@@ -3,12 +3,11 @@ module Subscriptions
         class Delete
         include Interactor::Organizer
 
-        organize {
+        organize(
             Subscriptions::Interactors::Unsubscribe,
-            Subscriptions::Interactors::SendNotificationToAuthor
+            Subscriptions::Interactors::SendNotificationToAuthor,
             Subscriptions::Interactors::SendNotificationToReader
-        }
-
+        )
         end
 
     end

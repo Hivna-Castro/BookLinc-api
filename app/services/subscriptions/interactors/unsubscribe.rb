@@ -7,13 +7,12 @@ module Subscriptions
   
         def call
         
-          subscription = Subscription.find_by(reader: context.reader, newsletter: context.newsletter)
-          context.author = context.newsletter.author
+          subscription = Subscription.find_by(id: context.subscription_id)
           
           if subscription
             if subscription.destroy
               context.subscription = subscription
-              context.message = "Você se desinscreveu na newsletter '#{context.newsletter.title}'."
+              context.message = "Você se desinscreveu na newsletter '#{subscription.news_title}'."
             else
               context.fail!(message: 'Não foi possível desinscrever da newsletter.')
             end

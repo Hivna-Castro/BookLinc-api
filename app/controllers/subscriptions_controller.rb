@@ -22,7 +22,8 @@ class SubscriptionsController < ApplicationController
     
       def delete
         subscription = Subscription.find_by(id: params[:id])
-        render(json: subscription.destroy.as_json)
+        render(json: subscription.destroy.as_json)+
+        
       end
     
       def subscribe_to_newsletter
@@ -40,7 +41,7 @@ class SubscriptionsController < ApplicationController
       end
 
       def unsubscribe_to_newsletter
-        result = Subscriptions::Organizers::Delete.call(reader_id: params[:reader_id], newsletter_id: params[:newsletter_id])
+        result = Subscriptions::Organizers::Delete.call(subscription_id: params[:id])
     
         if result.success?
           render (json: result.subscription.as_json, status: :ok)
