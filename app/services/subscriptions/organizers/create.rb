@@ -3,10 +3,10 @@ module Subscriptions
         class Create
         include Interactor::Organizer
 
-        organize {
+        organize(
             Subscriptions::Interactors::Subscribe,
             Subscriptions::Interactors::SendNotificationToAuthor
-        }
+        )
 
         end
 

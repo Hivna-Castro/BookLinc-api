@@ -3,6 +3,7 @@ class Subscriptions::Interactors::SendNotificationToAuthor
 
     def call
       Notifications::Organizers::Send.call(email: email, message: message)
+      context.confirmation = true
     end
 
     private
@@ -29,5 +30,9 @@ class Subscriptions::Interactors::SendNotificationToAuthor
 
     def subscription
       context.subscription
+    end
+
+    def reader
+      context.reader
     end
 end

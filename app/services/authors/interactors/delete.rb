@@ -9,6 +9,7 @@ module Authors
                     delete_author 
                 else
                     context.fail!(message = "Não foi encontrado o autor")
+                end
                 puts "Estou falando de dentro do interactor Delete"
                 context.message = "Deu certo"
             end

@@ -17,6 +17,9 @@ gem 'puma', '~> 5.0'
 gem 'interactor', -'~> 3.0'
 
 gem 'rubocop', require: false
+gem 'rspec-rails', '~> 6.0.0'
+gem 'factory_bot_rails'
+gem 'byebug', '~> 9.0', '>= 9.0.5'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
