@@ -2,12 +2,10 @@ require "rails_helper"
 
 RSpec.describe(Subscriptions::Organizers::Create) do
   describe "#call" do
-    it do
-      #SETUP
-      author = Author.create!(name: "Junior")
-      reader = Reader.create!(name: "Leitor 1")
-      newsletter = Newsletter.create!(author: author, title: "Laion")
+    let(:reader) { create(:reader) }
+    let(:newsletter) { create(:newsletter) }
 
+    it do      
       #Processamento
       result = described_class.call(
         reader: reader,

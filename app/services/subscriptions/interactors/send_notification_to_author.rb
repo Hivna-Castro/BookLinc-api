@@ -9,7 +9,8 @@ class Subscriptions::Interactors::SendNotificationToAuthor
     private
 
     def email
-      author.email
+      #author.email
+      "author@gmail.com"
     end
 
     def message

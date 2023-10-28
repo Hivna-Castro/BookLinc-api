@@ -3,7 +3,7 @@ module Notifications
         class Send
           include Interactor::Organizer
 
-          organizer(
+          organize(
             Notifications::Interactors::Send
           )
         end

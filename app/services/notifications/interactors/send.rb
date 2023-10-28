@@ -4,10 +4,10 @@ module Notifications
           include Interactor
           
           def call
-            mail(
-              to: context.email
-              body: context.message 
-            )
+            #mail(
+            #  to: context.email,
+            #  body: context.message 
+            #)
           end
         end
     end
