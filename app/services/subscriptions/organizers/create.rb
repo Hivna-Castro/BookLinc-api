@@ -7,7 +7,6 @@ module Subscriptions
             Subscriptions::Interactors::Subscribe,
             Subscriptions::Interactors::SendNotificationToAuthor
         )
-
         end
 
     end

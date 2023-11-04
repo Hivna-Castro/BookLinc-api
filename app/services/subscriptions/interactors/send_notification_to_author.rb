@@ -4,6 +4,7 @@ class Subscriptions::Interactors::SendNotificationToAuthor
     def call
       Notifications::Organizers::Send.call(email: email, message: message)
       context.confirmation = true
+      #raise "Erro ao enviar a notificao"
     end
 
     private

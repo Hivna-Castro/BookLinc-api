@@ -19,6 +19,10 @@ module Subscriptions
           context.fail!(message: 'Não foi possível se inscrever na newsletter.')
         end
       end
+
+      def rollback
+        context.subscription.destroy
+      end
     end
   end
 end
