@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-require 'sidekiq/web'
+# require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  mount Sidekiq::Web => "/sidekiq"
+  
 
   get 'authors', to: 'authors#all'
   get 'author/:id', to: 'authors#find'
